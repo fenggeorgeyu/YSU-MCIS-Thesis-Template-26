@@ -1,0 +1,96 @@
+%%---introduction---
+\section{Introduction} %1st level heading
+
+Example of citation \cite{knuth1997art}.
+
+
+\subsection{Example Subsection}
+
+
+\begin{equation}\label{eq:label1}
+    f(x)=\int^\infty_{-\infty} g(x,t)dt
+\end{equation}
+
+\begin{itemize}
+    \item Item 1
+    \item Item 2
+\end{itemize}
+
+
+\begin{enumerate}
+    \item Bullet 1
+    \item Bullet 2
+\end{enumerate}
+
+\begin{table}[h]
+\caption{Table Caption}
+\label{tbl:label2}
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+A & B & C\\ \midrule
+a & b & c\\
+1 & 2 & 3\\ \bottomrule
+\end{tabular}
+\end{table}
+
+%%---single figure---
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.25\linewidth]{figure/acm.png}
+    \caption{Figure Example}
+    \label{fig:example1}
+\end{figure}
+
+
+
+%%---subfigure---
+\begin{figure}[htbp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figure/acm.png}
+         \caption{Left Figure}
+         \label{fig:sub-left}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{figure/acm.png}
+         \caption{Right Figure}
+         \label{fig:sub-right}
+     \end{subfigure}
+     \caption{Subfigure Example}
+     \label{fig:network_comparison}
+\end{figure}
+
+
+
+%source code
+% \begin{lstlisting}[language=c]
+% int main(){
+%     printf("hello world!\n");
+% }
+% \end{lstlisting}
+\begin{lstlisting}[language=Python, caption={Example Python Source Code}]
+import bit
+from bit import Key
+
+# Generate a testnet key
+my_key = Key()
+print(my_key.address)
+\end{lstlisting}
+
+
+\subsection{Reference Example}
+
+Referring figure use \lstinline|\ref{fig:example1}| to refer Figure \ref{fig:example1}.
+
+Equation \ref{eq:label1}. 
+
+Table \ref{tbl:label2}.
+
+
+
+
+

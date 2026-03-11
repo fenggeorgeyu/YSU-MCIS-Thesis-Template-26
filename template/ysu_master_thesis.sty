@@ -1,0 +1,101 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ysu_master_thesis}[2026/02/28 YSU Master Thesis Style Package]
+
+% --- Core Packages ---
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{graphicx}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{caption}
+\RequirePackage{tabto}
+\RequirePackage{markdown}
+\RequirePackage{algorithm}
+\RequirePackage{url}
+\RequirePackage{lipsum} 
+\RequirePackage{multirow}
+\RequirePackage{listings}
+\RequirePackage{etoolbox,setspace}
+\RequirePackage{hyperref}
+\RequirePackage[titletoc,title]{appendix} 
+
+% --- Page Formatting (Thesis Standard) ---
+\RequirePackage[letterpaper, top=1in, bottom=1in, left=1.5in, right=1in]{geometry}
+\AtBeginEnvironment{algorithm}{\setstretch{2.5}}
+
+% --- Subfigure Formatting ---
+\RequirePackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
+% --- Theorem and Definition Formatting ---
+\let\openbox\relax % Fix \openbox redefined issue
+\RequirePackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+
+% --- TikZ & Plotting ---
+\RequirePackage{tikz}
+\usetikzlibrary{matrix, decorations}
+\RequirePackage{pgfplots,pgfplotstable}
+\pgfplotsset{compat=1.14}
+\RequirePackage{diagbox}
+\RequirePackage{booktabs}
+
+% --- Font & Color ---
+\RequirePackage{times}
+\RequirePackage{color}
+\RequirePackage{lmodern} % Fixes < > operators in algorithms
+
+% --- Algorithm Settings ---
+\PassOptionsToPackage{noend}{algpseudocode}
+\RequirePackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+% --- source code display ----
+
+% --- Listings (lstset) Configuration ---
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+    % backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    %numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single,                     % adds a frame around the code
+    lineskip=2pt,                % adds extra vertical space between lines
+    basewidth={0.5em,0.45em},    % ensures consistent character spacing
+    rulecolor=\color{black}           % if not set, the frame-color may be changed on line-breaks
+}
+
+% --- Custom Revision Commands ---
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\green}[1]{{\color{green}#1}}
+
+\endinput

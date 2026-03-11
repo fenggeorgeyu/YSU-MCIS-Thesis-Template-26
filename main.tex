@@ -1,0 +1,87 @@
+% Revised template: revised packages, added tutorial links - @20230905
+% Thanks to Dr. G Jay Kerns <gkerns@ysu.edu> who provided a template that I can edit. @2018
+
+\documentclass[12pt]{article}
+\usepackage{template/ysu_master_thesis}
+
+\input{sections/00_title}
+
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{2.0}
+%---Margins and Page Numbering ---
+% Margins are 1" on the top, bottom, and right-hand side, and 1 1/2" on the left-hand side. The body of the thesis begins with page number 1. Pages prior to page 1 are numbered with Roman numerals. The first page numbered is the abstract (page iii); the title and signature pages are not numbered.
+\pagenumbering{roman}
+
+
+%---general thesis outline---
+% Title Page
+% Copyright Page
+% Abstract
+% Dedication, Acknowledgements, and Preface (each optional)
+% Table of Contents, with page numbers
+% List of Tables, List of Figures
+% List of Abbreviations (if applicable)
+% List of Symbols (if applicable)
+% Chapters or Sections, including:
+% Introduction, if any
+% Main body, with consistent subheadings as appropriate
+% References (see section on References for options)
+% Appendices (if applicable)
+% Endnotes (if applicable)
+%---------------------
+
+\begin{document}
+%---first page---
+\maketitle % print title and author name on the front page
+\thispagestyle{empty} % no page number for the front page
+
+\begin{center}
+Submitted in Partial Fulfillment of the Requirements
+\\for the Degree of 
+\\Master 
+\\of 
+\\Computing and Information Systems
+\\ [0.8in]
+YOUNGSTOWN STATE UNIVERSITY\\
+\date{MM, YYYY}
+
+\newpage
+\begin{flushleft}
+\input{sections/01_signature}
+\newpage
+\renewcommand{\baselinestretch}{2.0}
+%---abstract page---
+\input{sections/02_abstract}
+\newpage
+%---acknowledgements page---
+\include{sections/02_acknowledgement}
+\end{flushleft}
+\newpage
+ 
+%---generating the table contents---
+\tableofcontents 
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage 
+
+\end{center}
+\newpage
+
+%---begin of thesis---
+\pagenumbering{arabic} %--start arabic numbering in the thesis body--
+
+\input{sections/10_introduction}
+\input{sections/20_background}
+\input{sections/30_problem}
+\input{sections/80_experiment}
+\input{sections/90_conclusion}
+\newpage
+\input{sections/100_references}
+\newpage
+\input{sections/110_appendix}
+
+
+\end{document}
